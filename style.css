@@ -358,10 +358,11 @@ position: relative;
   
 }
 
+
+
 .heart{
-  background-image: url("./img/hovers_icons/heart.png"); 
-  background-size: cover;
-  background-position: center;
+  padding: 10px;
+  background-color: #E0E0E0;
 
   width: 40px;
   height: 40px;
@@ -370,13 +371,22 @@ position: relative;
   top: 20px;
   left: 20px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+
   display: none;
+
 }
 
 .download{
-  background-image: url("./img/hovers_icons/download.png"); 
+  /* background-image: url("./img/hovers_icons/download.png"); 
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+
+  padding: 10px;
+  background-color: #E0E0E0;
 
   width: 40px;
   height: 40px;
@@ -385,17 +395,81 @@ position: relative;
   top: 20px;
   right: 20px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+
+  display: none;
+}
+
+.photo-list__item:hover .heart svg,
+.photo-list__item:hover .download svg{
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.heart svg use,
+.download svg use{
+  /* background-image: url("./img/hovers_icons/icon.svg");  */
+  /* background-size: cover;
+  background-position: center; */
+
+  width: 20px;
+  height: 20px;
+
+  z-index: 1;
+
   display: none;
 }
 
 .photo-list__item:hover .heart,
 .photo-list__item:hover .download{
-  display: block;
+  display: inline-flex;
+  opacity: 0.5;
   cursor: pointer;
 }
 
+.photo-list__item:hover .heart:hover,
+.photo-list__item:hover .download:hover{
+  display: inline-flex;
+  opacity: 1;
+}
 
-.photo-list__item:hover .heart,
+.photo-list__item:hover .heart svg use,
+.photo-list__item:hover .download svg use{
+  display: inline-flex;
+  opacity: 1;
+}
+
+.heart svg use,
+.download svg use{
+  /* background-image: url("./img/hovers_icons/icon.svg"); 
+  background-size: cover;
+  background-position: center; */
+
+  width: 20px;
+  height: 20px;
+
+  
+
+  z-index: 1;
+
+  display: none;
+}
+
+
+.photo-list__item:hover .heart svg,
+.photo-list__item:hover .heart{
+  display: inline -flex;
+}
+
+
+
+
+
+
+/* .photo-list__item:hover .heart,
 .photo-list__item:hover .heart input[type="checkbox"]:checked::before{
   display: block;
   cursor: pointer;
@@ -425,8 +499,9 @@ input[type="checkbox"]:checked::before {
 }
 
 .heart input[type="checkbox"]:checked {
+  visibility: hidden;
   display: block;
-}
+} */
 
 .name{
   position: absolute;
@@ -455,16 +530,31 @@ input[type="checkbox"]:checked::before {
   opacity: 1; /* Забезпечує прозорість зображення */
 }
 
-.gradient-overlay1 {
-  /* display: none; */
-  border-radius: 20px;
-  opacity: 0.5;
+.gradient-overlay {
   position: absolute;
   top: 0;
+  right: 0;
   left: 0;
+  bottom: 0;
+  
+  border-radius: 20px;
+  /* opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0; */
   width: 100%;
-  height: 99%;
-  background-image: linear-gradient(to top, #241F24 0%, #5B5B5B 34%, #BBBAC0 63%);
+  height: 100%;
+  background-image: url("./img/hovers_icons/hover/blur.png"); 
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-list__item:hover .gradient-overlay{
+  background-image: url("./img/hovers_icons/hover/blure-hover.png");
+}
+
+.photo-list__item{
+  position: relative;
 }
 
 .photo-list__item:nth-child(2) {
