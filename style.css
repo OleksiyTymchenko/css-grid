@@ -461,9 +461,12 @@ position: relative;
 
 .photo-list__item:hover .heart svg,
 .photo-list__item:hover .heart{
-  display: inline -flex;
+  display: inline-flex;
 }
 
+use{
+  display: none;
+}
 
 
 
